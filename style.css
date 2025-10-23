@@ -1,28 +1,186 @@
-// ... (Vorhandener CSS-Code)
+:root {
+    --color-primary: #FFC107; /* Gold/Orange (Warframe Accent) */
+    --color-secondary: #00A6FF; /* Blau (Akzent) */
+    --color-background: #141418; /* Sehr dunkler Hintergrund */
+    --color-card: #1F1F24; /* Dunkle Karten-Farbe */
+    --color-text-light: #E0E0E0;
+    --color-gain: #4CAF50; /* Grün */
+    --color-loss: #E53935; /* Rot */
+    --color-reset: #757575; /* Grau */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-/* Statistik-Box */
-.stats-box {
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    color: var(--color-text-light);
+    margin: 0;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 550px;
+    width: 100%;
+    background-color: #212128; /* Etwas heller als Hintergrund */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    border-top: 3px solid var(--color-primary);
+}
+
+h1 {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+h2 {
+    color: var(--color-text-light);
+    font-size: 1.2em;
+    margin-top: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #333;
+}
+
+/* HEADER STATS */
+.header-stats {
     display: flex;
     justify-content: space-between;
+    gap: 15px;
     margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #333;
-    border-radius: 4px;
 }
-// ... (Vorhandener CSS-Code)
 
-/* Neuer Reset-Button */
-.reset-btn {
-    background-color: #795548; /* Rost- oder Braun-Ton, passend zum Warframe-Thema */
-    color: white;
-    padding: 8px 12px;
+.stat-box {
+    flex: 1;
+    background-color: var(--color-card);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.stat-box.ducats { border-left: 5px solid var(--color-primary); }
+.stat-box.rate { border-left: 5px solid var(--color-secondary); }
+
+.stat-label {
+    display: block;
+    font-size: 0.8em;
+    color: #AAAAAA;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 2em;
+    font-weight: bold;
+    display: block;
+}
+
+.stat-box.ducats .stat-value { color: var(--color-primary); }
+.stat-box.rate .stat-value { color: var(--color-secondary); font-size: 1.5em;}
+
+/* BUTTONS & INPUTS */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 10px;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.1s;
+    flex-grow: 1;
+    color: var(--color-background);
 }
-.reset-btn:hover { background-color: #6D4C41; }
 
-/* ... (Der Rest des CSS-Codes bleibt unverändert) */
+.btn:active {
+    transform: translateY(1px);
+}
+
+.tier-15 { background-color: #B0855A; } /* Bronze */
+.tier-45 { background-color: #8C8C8C; } /* Silber */
+.tier-100 { background-color: var(--color-primary); } /* Gold */
+
+.btn-custom { background-color: #1E88E5; color: white; }
+.btn-spend { background-color: var(--color-loss); color: white; }
+
+.custom-input input {
+    flex-grow: 1;
+}
+
+input[type="number"], input[type="text"] {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #2D2D33;
+    color: var(--color-text-light);
+    font-size: 1em;
+}
+
+.spend-group input {
+    flex-grow: 1;
+}
+
+/* RESET BUTTONS */
+.reset-button, .clear-history-button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #777;
+    border-radius: 5px;
+    background-color: #333333;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 20px;
+}
+.reset-button:hover, .clear-history-button:hover { background-color: #444444; }
+
+/* HISTORY */
+.history-section {
+    margin-top: 30px;
+}
+
+#historyList {
+    list-style: none;
+    padding: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: var(--color-card);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+#historyList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 5px;
+    border-bottom: 1px solid #333;
+    font-size: 0.95em;
+}
+#historyList li:last-child { border-bottom: none; }
+
+.history-details {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+.history-time {
+    font-size: 0.75em;
+    color: var(--color-reset);
+}
+
+.history-amount {
+    font-weight: bold;
+}
+
+.gain { color: var(--color-gain); }
+.loss { color: var(--color-loss); }
+.reset { color: var(--color-reset); }
