@@ -1,0 +1,893 @@
+{
+  "Trinity Prime": {
+    "Systems Blueprint": 15,
+    "Neuroptics Blueprint": 25,
+    "Chassis Blueprint": 45,
+    "Blueprint": 45
+  },
+  "Fragor Prime": {
+    "Head": 15,
+    "Blueprint": 65,
+    "Handle": 65
+  },
+  "Braton Prime": {
+    "Stock": 25,
+    "Barrel": 15,
+    "Blueprint": 25,
+    "Receiver": 25
+  },
+  "Akstiletto Prime": {
+    "Barrel": 25,
+    "Receiver": 25,
+    "Link": 45,
+    "Blueprint": 100
+  },
+  "Dual Kamas Prime": {
+    "Handle": 45,
+    "Blade": 100,
+    "Blueprint": 15
+  },
+  "Nikana Prime": {
+    "Blueprint": 25,
+    "Hilt": 100,
+    "Blade": 65
+  },
+  "Lex Prime": {
+    "Receiver": 15,
+    "Barrel": 15,
+    "Blueprint": 25
+  },
+  "Forma": {
+    "Blueprint": 25
+  },
+  "Aklex Prime": {
+    "Blueprint": 45,
+    "Link": 100
+  },
+  "Helios Prime": {
+    "Carapace": 15,
+    "Systems": 45,
+    "Cerebrum": 100,
+    "Blueprint": 45
+  },
+  "Kogake Prime": {
+    "Boot": 15,
+    "Blueprint": 45,
+    "Gauntlet": 100
+  },
+  "Cernos Prime": {
+    "String": 25,
+    "Blueprint": 45,
+    "Lower Limb": 100,
+    "Grip": 15,
+    "Upper Limb": 15
+  },
+  "Hydroid Prime": {
+    "Neuroptics Blueprint": 45,
+    "Chassis Blueprint": 15,
+    "Systems Blueprint": 100,
+    "Blueprint": 45
+  },
+  "Akbolto Prime": {
+    "Receiver": 100,
+    "Blueprint": 15,
+    "Link": 45,
+    "Barrel": 45
+  },
+  "Zephyr Prime": {
+    "Neuroptics Blueprint": 15,
+    "Blueprint": 65,
+    "Chassis Blueprint": 25,
+    "Systems Blueprint": 100
+  },
+  "Ballistica Prime": {
+    "String": 45,
+    "Lower Limb": 15,
+    "Upper Limb": 45,
+    "Blueprint": 100,
+    "Receiver": 45
+  },
+  "Fang Prime": {
+    "Handle": 25,
+    "Blueprint": 25,
+    "Blade": 15,
+    "Stock": 45
+  },
+  "Vasto Prime": {
+    "Barrel": 15,
+    "Receiver": 15,
+    "Blueprint": 45
+  },
+  "Akvasto Prime": {
+    "Link": 45,
+    "Blueprint": 100
+  },
+  "Chroma Prime": {
+    "Blueprint": 15,
+    "Systems Blueprint": 65,
+    "Chassis Blueprint": 25,
+    "Neuroptics Blueprint": 100
+  },
+  "Orthos Prime": {
+    "Handle": 15,
+    "Blueprint": 45,
+    "Blade": 45
+  },
+  "Tipedo Prime": {
+    "Ornament": 45,
+    "Handle": 100,
+    "Blueprint": 15
+  },
+  "Zhuge Prime": {
+    "Blueprint": 45,
+    "String": 15,
+    "Receiver": 45,
+    "Grip": 15,
+    "Barrel": 100
+  },
+  "Atlas Prime": {
+    "Neuroptics Blueprint": 100,
+    "Chassis Blueprint": 45,
+    "Systems Blueprint": 45,
+    "Blueprint": 15
+  },
+  "Carrier Prime": {
+    "Systems": 15,
+    "Carapace": 25,
+    "Cerebrum": 65,
+    "Blueprint": 15
+  },
+  "Ash Prime": {
+    "Systems Blueprint": 65,
+    "Chassis Blueprint": 15,
+    "Blueprint": 45,
+    "Neuroptics Blueprint": 45
+  },
+  "Equinox Prime": {
+    "Chassis Blueprint": 15,
+    "Blueprint": 45,
+    "Neuroptics Blueprint": 45,
+    "Systems Blueprint": 100
+  },
+  "Pyrana Prime": {
+    "Barrel": 15,
+    "Receiver": 45,
+    "Blueprint": 100
+  },
+  "Gram Prime": {
+    "Blueprint": 45,
+    "Blade": 15,
+    "Handle": 100
+  },
+  "Aksomati Prime": {
+    "Link": 100,
+    "Blueprint": 15,
+    "Receiver": 15,
+    "Barrel": 45
+  },
+  "Rubico Prime": {
+    "Stock": 25,
+    "Barrel": 25,
+    "Receiver": 15,
+    "Blueprint": 100
+  },
+  "Akbronco Prime": {
+    "Link": 45,
+    "Blueprint": 15
+  },
+  "Ivara Prime": {
+    "Systems Blueprint": 45,
+    "Blueprint": 45,
+    "Neuroptics Blueprint": 15,
+    "Chassis Blueprint": 100
+  },
+  "Stradavar Prime": {
+    "Receiver": 15,
+    "Stock": 15,
+    "Barrel": 45,
+    "Blueprint": 100
+  },
+  "Paris Prime": {
+    "Grip": 45,
+    "Blueprint": 15,
+    "Lower Limb": 15,
+    "Upper Limb": 25,
+    "String": 15
+  },
+  "Wukong Prime": {
+    "Chassis Blueprint": 45,
+    "Systems Blueprint": 45,
+    "Neuroptics Blueprint": 15,
+    "Blueprint": 100
+  },
+  "Burston Prime": {
+    "Receiver": 15,
+    "Blueprint": 15,
+    "Barrel": 45,
+    "Stock": 15
+  },
+  "Pangolin Prime": {
+    "Blade": 45,
+    "Handle": 15,
+    "Blueprint": 100
+  },
+  "Mirage Prime": {
+    "Chassis Blueprint": 15,
+    "Systems Blueprint": 45,
+    "Blueprint": 100,
+    "Neuroptics Blueprint": 15
+  },
+  "Banshee Prime": {
+    "Blueprint": 45,
+    "Systems Blueprint": 65,
+    "Neuroptics Blueprint": 15,
+    "Chassis Blueprint": 100
+  },
+  "Inaros Prime": {
+    "Systems Blueprint": 15,
+    "Neuroptics Blueprint": 100,
+    "Chassis Blueprint": 45,
+    "Blueprint": 45
+  },
+  "Volnus Prime": {
+    "Blueprint": 15,
+    "Head": 45,
+    "Handle": 100
+  },
+  "Zakti Prime": {
+    "Receiver": 15,
+    "Blueprint": 100,
+    "Barrel": 45
+  },
+  "Nidus Prime": {
+    "Blueprint": 45,
+    "Neuroptics Blueprint": 65,
+    "Chassis Blueprint": 100,
+    "Systems Blueprint": 15
+  },
+  "Karyst Prime": {
+    "Handle": 45,
+    "Blueprint": 15,
+    "Blade": 100
+  },
+  "Baza Prime": {
+    "Receiver": 15,
+    "Stock": 100,
+    "Blueprint": 65,
+    "Barrel": 45
+  },
+  "Sybaris Prime": {
+    "Stock": 15,
+    "Blueprint": 15,
+    "Receiver": 45,
+    "Barrel": 100
+  },
+  "Oberon Prime": {
+    "Systems Blueprint": 65,
+    "Chassis Blueprint": 15,
+    "Blueprint": 45,
+    "Neuroptics Blueprint": 100
+  },
+  "Scourge Prime": {
+    "Blade": 15,
+    "Handle": 45,
+    "Blueprint": 100,
+    "Barrel": 100
+  },
+  "Harrow Prime": {
+    "Neuroptics Blueprint": 45,
+    "Systems Blueprint": 100,
+    "Blueprint": 45,
+    "Chassis Blueprint": 15
+  },
+  "Revenant Prime": {
+    "Systems Blueprint": 45,
+    "Chassis Blueprint": 15,
+    "Neuroptics Blueprint": 45,
+    "Blueprint": 100
+  },
+  "Afuris Prime": {
+    "Receiver": 100,
+    "Blueprint": 15,
+    "Link": 45,
+    "Barrel": 15
+  },
+  "Wisp Prime": {
+    "Systems Blueprint": 15,
+    "Neuroptics Blueprint": 45,
+    "Blueprint": 100,
+    "Chassis Blueprint": 100
+  },
+  "Shade Prime": {
+    "Blueprint": 45,
+    "Systems": 45,
+    "Cerebrum": 15,
+    "Carapace": 100
+  },
+  "Cobra & Crane Prime": {
+    "Hilt": 15,
+    "Blueprint": 45,
+    "Guard": 100,
+    "Blade": 45
+  },
+  "Hildryn Prime": {
+    "Chassis Blueprint": 45,
+    "Blueprint": 100,
+    "Systems Blueprint": 15,
+    "Neuroptics Blueprint": 45
+  },
+  "Acceltra Prime": {
+    "Stock": 100,
+    "Blueprint": 25,
+    "Receiver": 65,
+    "Barrel": 100
+  },
+  "Epitaph Prime": {
+    "Blueprint": 15,
+    "Barrel": 45,
+    "Receiver": 100
+  },
+  "Bronco Prime": {
+    "Receiver": 15,
+    "Blueprint": 15,
+    "Barrel": 25
+  },
+  "Larkspur Prime": {
+    "Receiver": 45,
+    "Stock": 45,
+    "Barrel": 100,
+    "Blueprint": 15
+  },
+  "Xaku Prime": {
+    "Systems Blueprint": 45,
+    "Chassis Blueprint": 45,
+    "Neuroptics Blueprint": 15,
+    "Blueprint": 100
+  },
+  "Euphona Prime": {
+    "Blueprint": 15,
+    "Receiver": 100,
+    "Barrel": 45
+  },
+  "Kavasa Prime": {
+    "Buckle": 65,
+    "Kubrow Collar Blueprint": 45,
+    "Band": 45
+  },
+  "Akjagara Prime": {
+    "Blueprint": 15,
+    "Receiver": 45,
+    "Link": 45,
+    "Barrel": 100
+  },
+  "Knell Prime": {
+    "Blueprint": 15,
+    "Barrel": 100,
+    "Receiver": 65
+  },
+  "Nagantaka Prime": {
+    "Receiver": 45,
+    "Barrel": 15,
+    "Blueprint": 100,
+    "Stock": 45
+  },
+  "Baruuk Prime": {
+    "Neuroptics Blueprint": 65,
+    "Blueprint": 100,
+    "Systems Blueprint": 15,
+    "Chassis Blueprint": 45
+  },
+  "Garuda Prime": {
+    "Chassis Blueprint": 45,
+    "Systems Blueprint": 65,
+    "Neuroptics Blueprint": 100,
+    "Blueprint": 15
+  },
+  "Hystrix Prime": {
+    "Blueprint": 45,
+    "Barrel": 15,
+    "Receiver": 100
+  },
+  "Gauss Prime": {
+    "Blueprint": 25,
+    "Neuroptics Blueprint": 45,
+    "Chassis Blueprint": 15,
+    "Systems Blueprint": 100
+  },
+  "Okina Prime": {
+    "Blade": 15,
+    "Blueprint": 100,
+    "Handle": 45
+  },
+  "Vectis Prime": {
+    "Barrel": 15,
+    "Stock": 65,
+    "Blueprint": 45,
+    "Receiver": 100
+  },
+  "Silva & Aegis Prime": {
+    "Blade": 45,
+    "Blueprint": 45,
+    "Hilt": 15,
+    "Guard": 100
+  },
+  "Panthera Prime": {
+    "Blueprint": 15,
+    "Stock": 45,
+    "Barrel": 100,
+    "Receiver": 65
+  },
+  "Tekko Prime": {
+    "Gauntlet": 15,
+    "Blade": 100,
+    "Blueprint": 45
+  },
+  "Corinth Prime": {
+    "Barrel": 100,
+    "Stock": 100,
+    "Receiver": 45,
+    "Blueprint": 15
+  },
+  "Pandero Prime": {
+    "Barrel": 45,
+    "Blueprint": 15,
+    "Receiver": 100
+  },
+  "Magnus Prime": {
+    "Blueprint": 15,
+    "Barrel": 100,
+    "Receiver": 45
+  },
+  "Tenora Prime": {
+    "Stock": 45,
+    "Blueprint": 15,
+    "Receiver": 100,
+    "Barrel": 65
+  },
+  "Gara Prime": {
+    "Systems Blueprint": 15,
+    "Blueprint": 100,
+    "Chassis Blueprint": 45,
+    "Neuroptics Blueprint": 45
+  },
+  "Phantasma Prime": {
+    "Stock": 65,
+    "Blueprint": 45,
+    "Receiver": 15,
+    "Barrel": 100
+  },
+  "Tatsu Prime": {
+    "Blade": 45,
+    "Blueprint": 15,
+    "Handle": 100
+  },
+  "Lavos Prime": {
+    "Chassis Blueprint": 15,
+    "Blueprint": 45,
+    "Systems Blueprint": 100,
+    "Neuroptics Blueprint": 45
+  },
+  "Daikyu Prime": {
+    "Lower Limb": 45,
+    "String": 15,
+    "Blueprint": 15,
+    "Upper Limb": 45,
+    "Grip": 100
+  },
+  "Caliban Prime": {
+    "Systems Blueprint": 100,
+    "Neuroptics Blueprint": 100,
+    "Chassis Blueprint": 15,
+    "Blueprint": 45
+  },
+  "Tiberon Prime": {
+    "Receiver": 15,
+    "Blueprint": 25,
+    "Stock": 100,
+    "Barrel": 65
+  },
+  "Destreza Prime": {
+    "Blade": 100,
+    "Handle": 15,
+    "Blueprint": 45
+  },
+  "Limbo Prime": {
+    "Systems Blueprint": 15,
+    "Neuroptics Blueprint": 65,
+    "Chassis Blueprint": 100,
+    "Blueprint": 45
+  },
+  "Latron Prime": {
+    "Barrel": 15,
+    "Blueprint": 25,
+    "Receiver": 25,
+    "Stock": 15
+  },
+  "Frost Prime": {
+    "Neuroptics Blueprint": 15,
+    "Chassis Blueprint": 15,
+    "Systems Blueprint": 45,
+    "Blueprint": 100
+  },
+  "Mag Prime": {
+    "Neuroptics Blueprint": 25,
+    "Systems Blueprint": 15,
+    "Blueprint": 100,
+    "Chassis Blueprint": 45
+  },
+  "Boar Prime": {
+    "Barrel": 45,
+    "Receiver": 15,
+    "Stock": 100,
+    "Blueprint": 25
+  },
+  "Dakra Prime": {
+    "Blade": 65,
+    "Blueprint": 45,
+    "Handle": 15
+  },
+  "Akarius Prime": {
+    "Barrel": 15,
+    "Link": 45,
+    "Receiver": 100,
+    "Blueprint": 100
+  },
+  "Dual Keres Prime": {
+    "Blueprint": 100,
+    "Blade": 15,
+    "Handle": 45
+  },
+  "Sicarus Prime": {
+    "Blueprint": 25,
+    "Receiver": 100,
+    "Barrel": 15
+  },
+  "Glaive Prime": {
+    "Blade": 45,
+    "Disc": 45,
+    "Blueprint": 100
+  },
+  "Ember Prime": {
+    "Blueprint": 100,
+    "Systems Blueprint": 45,
+    "Chassis Blueprint": 15,
+    "Neuroptics Blueprint": 25
+  },
+  "Vauban Prime": {
+    "Blueprint": 65,
+    "Chassis Blueprint": 25,
+    "Systems Blueprint": 100,
+    "Neuroptics Blueprint": 100
+  },
+  "Masseter Prime": {
+    "Handle": 15,
+    "Blueprint": 45,
+    "Blade": 100
+  },
+  "Velox Prime": {
+    "Blueprint": 45,
+    "Receiver": 15,
+    "Barrel": 100
+  },
+  "Fulmin Prime": {
+    "Receiver": 100,
+    "Stock": 45,
+    "Blueprint": 45,
+    "Barrel": 15
+  },
+  "Nekros Prime": {
+    "Chassis Blueprint": 15,
+    "Blueprint": 65,
+    "Neuroptics Blueprint": 45,
+    "Systems Blueprint": 100
+  },
+  "Saryn Prime": {
+    "Systems Blueprint": 15,
+    "Blueprint": 65,
+    "Neuroptics Blueprint": 25,
+    "Chassis Blueprint": 100
+  },
+  "Galatine Prime": {
+    "Blueprint": 100,
+    "Handle": 45,
+    "Blade": 15
+  },
+  "Redeemer Prime": {
+    "Blueprint": 45,
+    "Handle": 100,
+    "Blade": 15
+  },
+  "Ninkondi Prime": {
+    "Blueprint": 15,
+    "Chain": 45,
+    "Handle": 100
+  },
+  "Kronen Prime": {
+    "Handle": 45,
+    "Blueprint": 15,
+    "Blade": 100
+  },
+  "Nezha Prime": {
+    "Blueprint": 45,
+    "Chassis Blueprint": 100,
+    "Neuroptics Blueprint": 65,
+    "Systems Blueprint": 15
+  },
+  "Astilla Prime": {
+    "Blueprint": 45,
+    "Receiver": 15,
+    "Stock": 45,
+    "Barrel": 100
+  },
+  "Corvas Prime": {
+    "Stock": 15,
+    "Receiver": 15,
+    "Blueprint": 45,
+    "Barrel": 100
+  },
+  "Grendel Prime": {
+    "Systems Blueprint": 100,
+    "Neuroptics Blueprint": 15,
+    "Chassis Blueprint": 45,
+    "Blueprint": 100
+  },
+  "Khora Prime": {
+    "Chassis Blueprint": 45,
+    "Neuroptics Blueprint": 100,
+    "Systems Blueprint": 15,
+    "Blueprint": 65
+  },
+  "Sevagoth Prime": {
+    "Neuroptics Blueprint": 15,
+    "Chassis Blueprint": 100,
+    "Blueprint": 45,
+    "Systems Blueprint": 15
+  },
+  "Quassus Prime": {
+    "Handle": 15,
+    "Blade": 100,
+    "Blueprint": 45
+  },
+  "Zylok Prime": {
+    "Receiver": 45,
+    "Barrel": 15,
+    "Blueprint": 100
+  },
+  "Mesa Prime": {
+    "Chassis Blueprint": 15,
+    "Neuroptics Blueprint": 100,
+    "Blueprint": 45,
+    "Systems Blueprint": 65
+  },
+  "Dethcube Prime": {
+    "Systems": 15,
+    "Carapace": 45,
+    "Blueprint": 100,
+    "Cerebrum": 65
+  },
+  "Strun Prime": {
+    "Receiver": 15,
+    "Stock": 45,
+    "Barrel": 45,
+    "Blueprint": 100
+  },
+  "Odonata Prime": {
+    "Harness Blueprint": 15,
+    "Blueprint": 45,
+    "Wings Blueprint": 65,
+    "Systems Blueprint": 15
+  },
+  "Hikou Prime": {
+    "Pouch": 15,
+    "Stars": 15,
+    "Blueprint": 15
+  },
+  "Octavia Prime": {
+    "Neuroptics Blueprint": 15,
+    "Chassis Blueprint": 45,
+    "Systems Blueprint": 15,
+    "Blueprint": 100
+  },
+  "Reaper Prime": {
+    "Blueprint": 25,
+    "Handle": 15,
+    "Blade": 45
+  },
+  "Wyrm Prime": {
+    "Carapace": 15,
+    "Blueprint": 15,
+    "Cerebrum": 15,
+    "Systems": 45
+  },
+  "Loki Prime": {
+    "Systems Blueprint": 100,
+    "Blueprint": 15,
+    "Chassis Blueprint": 45,
+    "Neuroptics Blueprint": 15
+  },
+  "Nami Skyla Prime": {
+    "Blueprint": 15,
+    "Blade": 100,
+    "Handle": 45
+  },
+  "Bo Prime": {
+    "Ornament": 15,
+    "Blueprint": 15,
+    "Handle": 45
+  },
+  "Volt Prime": {
+    "Systems Blueprint": 45,
+    "Blueprint": 25,
+    "Neuroptics Blueprint": 65,
+    "Chassis Blueprint": 45
+  },
+  "Titania Prime": {
+    "Chassis Blueprint": 15,
+    "Systems Blueprint": 100,
+    "Blueprint": 45,
+    "Neuroptics Blueprint": 45
+  },
+  "Akmagnus Prime": {
+    "Blueprint": 15,
+    "Link": 45
+  },
+  "Cedo Prime": {
+    "Receiver": 45,
+    "Stock": 15,
+    "Blueprint": 100,
+    "Barrel": 45
+  },
+  "Protea Prime": {
+    "Blueprint": 15,
+    "Chassis Blueprint": 100,
+    "Systems Blueprint": 100,
+    "Neuroptics Blueprint": 45
+  },
+  "Kompressa Prime": {
+    "Receiver": 45,
+    "Blueprint": 15,
+    "Barrel": 100
+  },
+  "Nautilus Prime": {
+    "Cerebrum": 100,
+    "Systems": 45,
+    "Carapace": 15,
+    "Blueprint": 100
+  },
+  "Venka Prime": {
+    "Blueprint": 45,
+    "Blades": 15,
+    "Gauntlet": 100
+  },
+  "Yareli Prime": {
+    "Neuroptics Blueprint": 100,
+    "Systems Blueprint": 100,
+    "Chassis Blueprint": 15,
+    "Blueprint": 45
+  },
+  "Dual Zoren Prime": {
+    "Handle": 15,
+    "Blueprint": 45,
+    "Blade": 100
+  },
+  "Trumna Prime": {
+    "Blueprint": 15,
+    "Receiver": 100,
+    "Stock": 45,
+    "Barrel": 100
+  },
+  "Gunsen Prime": {
+    "Blueprint": 15,
+    "Handle": 45,
+    "Blade": 100
+  },
+  "Boltor Prime": {
+    "Stock": 15,
+    "Receiver": 45,
+    "Blueprint": 100,
+    "Barrel": 15
+  },
+  "Ankyros Prime": {
+    "Blade": 45,
+    "Blueprint": 15,
+    "Gauntlet": 15
+  },
+  "Rhino Prime": {
+    "Blueprint": 100,
+    "Systems Blueprint": 15,
+    "Neuroptics Blueprint": 45,
+    "Chassis Blueprint": 45
+  },
+  "Scindo Prime": {
+    "Blade": 100,
+    "Blueprint": 45,
+    "Handle": 25
+  },
+  "Nyx Prime": {
+    "Systems Blueprint": 45,
+    "Chassis Blueprint": 65,
+    "Blueprint": 15,
+    "Neuroptics Blueprint": 100
+  },
+  "Nova Prime": {
+    "Blueprint": 45,
+    "Systems Blueprint": 15,
+    "Neuroptics Blueprint": 15,
+    "Chassis Blueprint": 100
+  },
+  "Soma Prime": {
+    "Stock": 100,
+    "Receiver": 45,
+    "Blueprint": 25,
+    "Barrel": 15
+  },
+  "Spira Prime": {
+    "Pouch": 100,
+    "Blade": 65,
+    "Blueprint": 15
+  },
+  "Tigris Prime": {
+    "Barrel": 45,
+    "Blueprint": 100,
+    "Receiver": 45,
+    "Stock": 15
+  },
+  "Guandao Prime": {
+    "Blade": 15,
+    "Handle": 100,
+    "Blueprint": 45
+  },
+  "Vadarya Prime": {
+    "Receiver": 45,
+    "Stock": 15,
+    "Blueprint": 100,
+    "Barrel": 45
+  },
+  "Valkyr Prime": {
+    "Chassis Blueprint": 100,
+    "Blueprint": 15,
+    "Systems Blueprint": 65,
+    "Neuroptics Blueprint": 45
+  },
+  "Venato Prime": {
+    "Blade": 100,
+    "Blueprint": 45,
+    "Handle": 15
+  },
+  "Riven Sliver": {
+    "": 15
+  },
+  "Kuva": {
+    "": 15
+  },
+  "Ayatan Amber Star": {
+    "": 15
+  },
+  "Xata": {
+    "": 45
+  },
+  "Lohk": {
+    "": 45
+  },
+  "Exilus Weapon Adapter": {
+    "Blueprint": 100
+  },
+  "Vome": {
+    "": 45
+  },
+  "Jahu": {
+    "": 45
+  },
+  "Fass": {
+    "": 45
+  },
+  "Ris": {
+    "": 45
+  },
+  "Khra": {
+    "": 45
+  },
+  "Netra": {
+    "": 45
+  }
+}
