@@ -1,31 +1,88 @@
-// Globale Variablen
+// --- NEU: Übersetzungs-Wörterbuch ---
+// Dieses Objekt übersetzt die englischen Begriffe aus der database.json
+const translationMap = {
+    // Warframe Teile
+    "Blueprint": "Blaupause",
+    "Systems Blueprint": "Systeme Blaupause",
+    "Neuroptics Blueprint": "Neuroptik Blaupause",
+    "Chassis Blueprint": "Chassis Blaupause",
+    
+    // Generische Teile
+    "Systems": "Systeme",
+    "Neuroptics": "Neuroptik",
+    "Chassis": "Chassis",
+
+    // Waffenteile (Nahkampf)
+    "Blade": "Klinge",
+    "Handle": "Griff",
+    "Hilt": "Heft",
+    "Guard": "Schutz",
+    "Ornament": "Ornament",
+    
+    // Waffenteile (Schusswaffen)
+    "Barrel": "Lauf",
+    "Stock": "Schaft",
+    "Receiver": "Gehäuse",
+    "Link": "Verbindung",
+    
+    // Waffenteile (Bogen)
+    "String": "Sehne",
+    "Upper Limb": "Oberer Wurfarm",
+    "Lower Limb": "Unterer Wurfarm",
+    "Grip": "Griff",
+    
+    // Sentinel/Begleiter
+    "Carapace": "Panzer",
+    "Cerebrum": "Zerebrum",
+    
+    // Spezial
+    "Pouch": "Tasche",
+    "Stars": "Sterne",
+    "Boot": "Stiefel",
+    "Gauntlet": "Handschuh",
+    "Buckle": "Schnalle",
+    "Kubrow Collar Blueprint": "Kubrow-Halsband Blaupause",
+    "Band": "Band",
+    "Disc": "Disk"
+};
+
+/**
+ * NEU: Übersetzt einen einzelnen Teil-Namen.
+ * @param {string} partName - Der englische Name (z.B. "Blueprint")
+ * @returns {string} - Der deutsche Name (z.B. "Blaupause")
+ */
+function translatePartName(partName) {
+    // Prüft, ob es eine 1:1-Übersetzung gibt
+    if (translationMap[partName]) {
+        return translationMap[partName];
+    }
+    // Fallback: Wenn kein Treffer, Originalnamen zurückgeben
+    return partName;
+}
+
+// --- Globale Variablen (Unverändert) ---
 let ducatCount = 0;
 let history = [];
-let primeDatabase = {}; // Speichert die geladene database.json
-let searchablePartList = []; // Die "abgeflachte" Liste für die Suche
+let primeDatabase = {};
+let searchablePartList = []; // Wird jetzt mit deutschen Namen gefüllt
 
 const DUCAT_PLAT_RATIO = 5;
 const STORAGE_KEY_COUNT = 'wf_ducat_count';
 const STORAGE_KEY_HISTORY = 'wf_ducat_history';
 
-// DOM-Elemente
+// --- DOM-Elemente (Unverändert) ---
 const ducatCountElement = document.getElementById('ducatCount');
 const historyListElement = document.getElementById('historyList');
 const historyEmptyMessage = document.getElementById('historyEmpty');
 const searchInput = document.getElementById('partSearchInput');
 const searchResultsContainer = document.getElementById('searchResults');
 
-// --- HILFSFUNKTIONEN (Zeit, Anzeige) ---
-
+// --- HILFSFUNKTIONEN (Zeit, Anzeige) (Unverändert) ---
 function getCurrentTime() {
     return new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
 }
-
 function updateDisplay() {
-    // 1. Zähler aktualisieren
     ducatCountElement.textContent = ducatCount.toLocaleString('de-DE');
-
-    // 2. Historie aktualisieren
     historyListElement.innerHTML = '';
     if (history.length === 0) {
         historyEmptyMessage.style.display = 'block';
@@ -52,7 +109,6 @@ function updateDisplay() {
 }
 
 // --- LOCAL STORAGE FUNKTIONEN (Unverändert) ---
-
 function loadState() {
     const savedCount = localStorage.getItem(STORAGE_KEY_COUNT);
     const savedHistory = localStorage.getItem(STORAGE_KEY_HISTORY);
@@ -62,34 +118,28 @@ function loadState() {
     }
     updateDisplay();
 }
-
 function saveState() {
     localStorage.setItem(STORAGE_KEY_COUNT, ducatCount);
     localStorage.setItem(STORAGE_KEY_HISTORY, JSON.stringify(history));
 }
 
-// --- DATENBANK & SUCHE (NEU) ---
+// --- DATENBANK & SUCHE (AKTUALISIERT) ---
 
-/**
- * Lädt die database.json und wandelt sie in eine durchsuchbare Liste um.
- */
 async function loadDatabase() {
     try {
         const response = await fetch('database.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         primeDatabase = await response.json();
         flattenDatabase();
-        console.log('Prime-Datenbank erfolgreich geladen.');
+        console.log('Prime-Datenbank erfolgreich geladen und übersetzt.');
     } catch (error) {
         console.error('Fehler beim Laden der database.json:', error);
-        alert('Fehler: Die Datei "database.json" konnte nicht geladen werden. Stellen Sie sicher, dass sie sich im selben Ordner wie die index.html befindet.');
+        alert('Fehler: Die Datei "database.json" konnte nicht geladen werden.');
     }
 }
 
 /**
- * Wandelt das verschachtelte JSON-Objekt in ein flaches Array (searchablePartList) um.
+ * AKTUALISIERT: Wandelt das JSON um UND übersetzt die Namen.
  */
 function flattenDatabase() {
     searchablePartList = [];
@@ -97,65 +147,64 @@ function flattenDatabase() {
         for (const partName in primeDatabase[itemName]) {
             const ducats = primeDatabase[itemName][partName];
             
-            // Behandelt Spezialfälle wie "Riven Sliver"
-            const fullName = (partName === "") ? itemName : `${itemName} ${partName}`; 
+            // HIER PASSIERT DIE ÜBERSETZUNG
+            const translatedPartName = translatePartName(partName);
             
+            const displayName = (partName === "") ? itemName : `${itemName} ${translatedPartName}`; 
+            const originalName = (partName === "") ? itemName : `${itemName} ${partName}`; 
+
             searchablePartList.push({
-                name: fullName,
+                displayName: displayName,   // Deutsch (z.B. "Volt Prime Blaupause")
+                searchName: originalName,   // Englisch (z.B. "Volt Prime Blueprint")
                 ducats: ducats
             });
         }
     }
-    // Sortiert die Liste alphabetisch für bessere Suchergebnisse
-    searchablePartList.sort((a, b) => a.name.localeCompare(b.name));
+    searchablePartList.sort((a, b) => a.displayName.localeCompare(b.displayName));
 }
 
 /**
- * Wird bei jeder Tasteneingabe im Suchfeld aufgerufen.
+ * AKTUALISIERT: Sucht jetzt im deutschen UND englischen Namen.
  */
 function handleSearch(event) {
     const query = event.target.value.toLowerCase();
-    searchResultsContainer.innerHTML = ''; // Alte Ergebnisse löschen
+    searchResultsContainer.innerHTML = ''; 
 
-    if (query.length < 3) {
-        return; // Suche erst ab 3 Zeichen (wie von Ihnen vorgeschlagen)
-    }
+    if (query.length < 3) return;
 
     const results = searchablePartList.filter(part => 
-        part.name.toLowerCase().includes(query)
+        part.displayName.toLowerCase().includes(query) || // Suche Deutsch
+        part.searchName.toLowerCase().includes(query)    // Suche Englisch
     );
 
-    const limitedResults = results.slice(0, 5); // Auf 5 Ergebnisse begrenzen
+    const limitedResults = results.slice(0, 5);
 
     limitedResults.forEach(part => {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'search-result-item';
+        
+        // Zeigt den übersetzten (displayName) an
         itemDiv.innerHTML = `
-            <span>${part.name}</span>
+            <span>${part.displayName}</span>
             <span class="result-ducats">${part.ducats} Đ</span>
         `;
-        // WICHTIG: Der OnClick-Handler ruft addPartFromSearch auf
-        itemDiv.onclick = () => addPartFromSearch(part.name, part.ducats);
+        // Beim Klick wird der deutsche Name übergeben
+        itemDiv.onclick = () => addPartFromSearch(part.displayName, part.ducats);
         searchResultsContainer.appendChild(itemDiv);
     });
 }
 
 /**
- * Wird aufgerufen, wenn ein Suchergebnis angeklickt wird.
+ * AKTUALISIERT: Übergibt den deutschen (displayName) an die Historie.
  */
-function addPartFromSearch(name, ducats) {
-    handleTransaction(ducats, 'Einnahme', name);
-    
-    // Suchfeld und Ergebnisse leeren
+function addPartFromSearch(displayName, ducats) {
+    handleTransaction(ducats, 'Einnahme', displayName);
     searchInput.value = '';
     searchResultsContainer.innerHTML = '';
 }
 
 // --- KERN-FUNKTIONEN (Unverändert) ---
 
-/**
- * Verarbeitet Einnahmen oder Ausgaben von Dukaten und protokolliert sie.
- */
 function handleTransaction(amount, type, description) {
     if (type === 'Einnahme') ducatCount += amount;
     else if (type === 'Ausgabe') ducatCount -= amount;
@@ -172,9 +221,6 @@ function handleTransaction(amount, type, description) {
     saveState();
 }
 
-/**
- * Zieht Dukaten für einen Kauf ab.
- */
 function spendDucats() {
     const amountInput = document.getElementById('spendAmount');
     const itemInput = document.getElementById('spendItemName');
@@ -190,9 +236,6 @@ function spendDucats() {
     itemInput.value = '';
 }
 
-/**
- * Setzt den Dukaten-Zähler auf 0.
- */
 function resetDucats() {
     if (ducatCount === 0) return;
     if (confirm(`Zähler von ${ducatCount} Đ auf 0 zurücksetzen?`)) {
@@ -209,9 +252,6 @@ function resetDucats() {
     }
 }
 
-/**
- * Löscht die gesamte Historie.
- */
 function clearHistory() {
     if (history.length === 0) return;
     if (confirm("Möchten Sie die gesamte Historie löschen?")) {
@@ -221,9 +261,9 @@ function clearHistory() {
     }
 }
 
-// --- APP START ---
+// --- APP START (Unverändert) ---
 document.addEventListener('DOMContentLoaded', () => {
-    loadState(); // Lade den gespeicherten Zählerstand
-    loadDatabase(); // Lade die Prime-Teile-Datenbank
+    loadState();
+    loadDatabase(); 
     document.querySelector('.rate-value').textContent = `${DUCAT_PLAT_RATIO}:1`;
 });
