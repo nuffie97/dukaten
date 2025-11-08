@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warframe Dukaten Manager V2</title>
+    <title>Warframe Dukaten Manager (Autocomplete)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,15 +25,13 @@
         </button>
 
         <section class="section">
-            <h2>Dukaten Einnahme (Prime-Teile)</h2>
-            <div class="input-group">
-                <button onclick="handleTransaction(15, 'Einnahme', 'Bronze-Teil')" class="btn tier-15">+15</button>
-                <button onclick="handleTransaction(45, 'Einnahme', 'Silber-Teil')" class="btn tier-45">+45</button>
-                <button onclick="handleTransaction(100, 'Einnahme', 'Gold-Teil')" class="btn tier-100">+100</button>
-            </div>
-            <div class="input-group custom-input">
-                <input type="number" id="customAmount" placeholder="Eigene Menge">
-                <button onclick="addCustomDucats()" class="btn btn-custom">Hinzufügen</button>
+            <h2>Dukaten Einnahme (Teile-Suche)</h2>
+            <div class="search-wrapper">
+                <input type="text" id="partSearchInput" 
+                       placeholder="Prime-Teil suchen (ab 3 Zeichen)..." 
+                       onkeyup="handleSearch(event)">
+                
+                <div id="searchResults" class="search-results-container"></div>
             </div>
         </section>
 
@@ -41,7 +39,7 @@
             <h2>Dukaten Ausgaben (Baro-Kauf)</h2>
             <div class="input-group spend-group">
                 <input type="number" id="spendAmount" placeholder="Dukaten Betrag" class="spend-input">
-                <input type="text" id="spendItemName" placeholder="Gekaufter Gegenstand (z.B. Primed Mod)" class="spend-input">
+                <input type="text" id="spendItemName" placeholder="Gekaufter Gegenstand" class="spend-input">
                 <button onclick="spendDucats()" class="btn btn-spend">Ausgeben</button>
             </div>
         </section>
@@ -49,9 +47,8 @@
         <section class="section history-section">
             <h2>Transaktions-Historie</h2>
             <button onclick="clearHistory()" class="clear-history-button">Historie leeren</button>
-            <ul id="historyList">
-                </ul>
-            <p id="historyEmpty" class="history-message" style="display: none;">Noch keine Transaktionen vorhanden.</p>
+            <ul id="historyList"></ul>
+            <p id="historyEmpty" class="history-message">Noch keine Transaktionen vorhanden.</p>
         </section>
     </div>
 
