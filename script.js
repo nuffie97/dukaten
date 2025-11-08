@@ -16,6 +16,7 @@ const translationMap = {
     "Blade": "Klinge",
     "Handle": "Griff",
     "Hilt": "Griff",
+    "Head": "Kopf",
     "Guard": "Schutz",
     "Ornament": "Ornament",
     
@@ -267,4 +268,5 @@ document.addEventListener('DOMContentLoaded', () => {
     loadDatabase(); 
     document.querySelector('.rate-value').textContent = `${DUCAT_PLAT_RATIO}:1`;
 });
+
 
