@@ -9,7 +9,6 @@
     --color-reset: #757575;
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-/* ... (Alle Basis-Stile für body, container, h1, h2, stats, etc. bleiben gleich wie in V3) ... */
 body {
     font-family: var(--font-family);
     background-color: var(--color-background);
@@ -27,7 +26,26 @@ body {
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
     border-top: 3px solid var(--color-primary);
+    position: relative; 
 }
+
+/* STIL FÜR DEN "ZURÜCK ZUR ÜBERSICHT"-BUTTON */
+.back-button {
+    display: inline-block;
+    padding: 6px 10px;
+    background-color: var(--color-primary); 
+    color: var(--color-background); 
+    text-decoration: none;
+    font-size: 0.85em;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 15px; 
+    transition: background-color 0.2s;
+}
+.back-button:hover {
+    background-color: #ffda73; 
+}
+
 h1 { text-align: center; color: var(--color-primary); margin-bottom: 25px; font-size: 1.8em; }
 h2 { color: var(--color-text-light); font-size: 1.2em; margin-top: 20px; padding-bottom: 5px; border-bottom: 1px solid #333; text-align: left;}
 .header-stats { display: flex; gap: 15px; margin-bottom: 20px; }
@@ -42,11 +60,10 @@ h2 { color: var(--color-text-light); font-size: 1.2em; margin-top: 20px; padding
 .btn:active { transform: translateY(1px); }
 .btn-spend { background-color: var(--color-loss); color: white; }
 
-/* NEU: AUTOCOMPLETE SUCHE */
+/* AUTOCOMPLETE SUCHE */
 .search-wrapper {
-    position: relative; /* Wichtig für die Positionierung der Ergebnisse */
+    position: relative;
 }
-
 #partSearchInput {
     width: 100%;
     padding: 12px;
@@ -55,9 +72,8 @@ h2 { color: var(--color-text-light); font-size: 1.2em; margin-top: 20px; padding
     border-radius: 5px;
     background-color: #2D2D33;
     color: var(--color-text-light);
-    box-sizing: border-box; /* Verhindert Überlappung */
+    box-sizing: border-box;
 }
-
 .search-results-container {
     position: absolute;
     width: 100%;
@@ -69,7 +85,6 @@ h2 { color: var(--color-text-light); font-size: 1.2em; margin-top: 20px; padding
     max-height: 200px;
     overflow-y: auto;
 }
-
 .search-result-item {
     padding: 10px;
     cursor: pointer;
@@ -78,13 +93,8 @@ h2 { color: var(--color-text-light); font-size: 1.2em; margin-top: 20px; padding
     align-items: center;
     border-bottom: 1px solid #444;
 }
-.search-result-item:last-child {
-    border-bottom: none;
-}
-.search-result-item:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-card);
-}
+.search-result-item:last-child { border-bottom: none; }
+.search-result-item:hover { background-color: var(--color-secondary); color: var(--color-card); }
 .result-ducats {
     font-weight: bold;
     color: var(--color-primary);
@@ -92,12 +102,15 @@ h2 { color: var(--color-text-light); font-size: 1.2em; margin-top: 20px; padding
     background-color: var(--color-card);
     border-radius: 4px;
 }
-.search-result-item:hover .result-ducats {
-    color: var(--color-primary); /* Farbe beibehalten */
+.search-result-item:hover .result-ducats { color: var(--color-primary); }
+
+/* INPUTS (mit Fix) */
+.input-group { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 10px; 
 }
 
-/* INPUTS (Unverändert) */
-.input-group { display: flex; gap: 10px; margin-bottom: 10px; }
 input[type="number"], input[type="text"] {
     padding: 10px;
     border: 1px solid #333;
@@ -105,18 +118,28 @@ input[type="number"], input[type="text"] {
     background-color: #2D2D33;
     color: var(--color-text-light);
     font-size: 1em;
+    box-sizing: border-box; 
 }
-.spend-group input { flex-grow: 1; }
 
-/* RESET BUTTONS (Unverändert) */
+/* FIX FÜR AUSGABEN-SEKTION */
+.spend-group {
+    flex-direction: column; /* Stapelt die Elemente vertikal */
+}
+
+.spend-group input, .spend-group button {
+    width: 100%; /* Setzt alle Kinder (Inputs, Button) auf volle Breite */
+}
+
+/* RESET BUTTONS */
 .reset-button, .clear-history-button {
     width: 100%; padding: 10px; border: 1px solid #777; border-radius: 5px;
     background-color: #333333; color: white; font-weight: bold; cursor: pointer;
     transition: background-color 0.2s; margin-bottom: 20px;
+    box-sizing: border-box;
 }
 .reset-button:hover, .clear-history-button:hover { background-color: #444444; }
 
-/* HISTORY (Unverändert) */
+/* HISTORY */
 .history-section { margin-top: 30px; }
 #historyList { list-style: none; padding: 0; max-height: 250px; overflow-y: auto; background-color: var(--color-card); border-radius: 8px; padding: 10px; }
 #historyList li { display: flex; justify-content: space-between; align-items: center; padding: 8px 5px; border-bottom: 1px solid #333; font-size: 0.95em; }
@@ -128,22 +151,3 @@ input[type="number"], input[type="text"] {
 .loss { color: var(--color-loss); }
 .reset { color: var(--color-reset); }
 .history-message { text-align: center; color: var(--color-reset); }
-
-/* --- NEU: Home-Button Style --- */
-.btn-home {
-    display: inline-block;
-    background-color: var(--color-card);
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    padding: 8px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9em;
-    margin-bottom: 20px;
-    transition: background-color 0.2s, color 0.2s;
-}
-.btn-home:hover {
-    background-color: var(--color-primary);
-    color: var(--color-text-dark, #111);
-}
