@@ -11,9 +11,10 @@ const translationMap = {
     // Waffenteile (Nahkampf)
     "Blade": "Klinge",
     "Handle": "Griff",
-    "Hilt": "Heft",
+    "Hilt": "Griff",
     "Guard": "Schutz",
     "Ornament": "Ornament",
+    "Head": "Kopf",
     // Waffenteile (Schusswaffen)
     "Barrel": "Lauf",
     "Stock": "Schaft",
@@ -21,8 +22,8 @@ const translationMap = {
     "Link": "Verbindung",
     // Waffenteile (Bogen)
     "String": "Sehne",
-    "Upper Limb": "Oberer Wurfarm",
-    "Lower Limb": "Unterer Wurfarm",
+    "Upper Limb": "Oberteil",
+    "Lower Limb": "Untereteil",
     "Grip": "Griff",
     // Sentinel/Begleiter
     "Carapace": "Panzer",
@@ -235,3 +236,4 @@ document.addEventListener('DOMContentLoaded', () => {
     loadDatabase(); 
     document.querySelector('.rate-value').textContent = `${DUCAT_PLAT_RATIO}:1`;
 });
+
