@@ -1,41 +1,32 @@
-// --- NEU: Übersetzungs-Wörterbuch ---
-// Dieses Objekt übersetzt die englischen Begriffe aus der database.json
+// --- Übersetzungs-Wörterbuch ---
 const translationMap = {
     // Warframe Teile
     "Blueprint": "Blaupause",
     "Systems Blueprint": "Systeme Blaupause",
     "Neuroptics Blueprint": "Neuroptik Blaupause",
     "Chassis Blueprint": "Chassis Blaupause",
-    
-    // Generische Teile
     "Systems": "Systeme",
     "Neuroptics": "Neuroptik",
     "Chassis": "Chassis",
-
     // Waffenteile (Nahkampf)
     "Blade": "Klinge",
     "Handle": "Griff",
-    "Hilt": "Griff",
-    "Head": "Kopf",
+    "Hilt": "Heft",
     "Guard": "Schutz",
     "Ornament": "Ornament",
-    
     // Waffenteile (Schusswaffen)
     "Barrel": "Lauf",
     "Stock": "Schaft",
     "Receiver": "Gehäuse",
     "Link": "Verbindung",
-    
     // Waffenteile (Bogen)
     "String": "Sehne",
-    "Upper Limb": "Oberteil",
-    "Lower Limb": "Unterteil",
+    "Upper Limb": "Oberer Wurfarm",
+    "Lower Limb": "Unterer Wurfarm",
     "Grip": "Griff",
-    
     // Sentinel/Begleiter
     "Carapace": "Panzer",
     "Cerebrum": "Zerebrum",
-    
     // Spezial
     "Pouch": "Tasche",
     "Stars": "Sterne",
@@ -48,37 +39,33 @@ const translationMap = {
 };
 
 /**
- * NEU: Übersetzt einen einzelnen Teil-Namen.
- * @param {string} partName - Der englische Name (z.B. "Blueprint")
- * @returns {string} - Der deutsche Name (z.B. "Blaupause")
+ * Übersetzt einen einzelnen Teil-Namen.
  */
 function translatePartName(partName) {
-    // Prüft, ob es eine 1:1-Übersetzung gibt
     if (translationMap[partName]) {
         return translationMap[partName];
     }
-    // Fallback: Wenn kein Treffer, Originalnamen zurückgeben
     return partName;
 }
 
-// --- Globale Variablen (Unverändert) ---
+// --- Globale Variablen ---
 let ducatCount = 0;
 let history = [];
 let primeDatabase = {};
-let searchablePartList = []; // Wird jetzt mit deutschen Namen gefüllt
+let searchablePartList = []; 
 
 const DUCAT_PLAT_RATIO = 5;
 const STORAGE_KEY_COUNT = 'wf_ducat_count';
 const STORAGE_KEY_HISTORY = 'wf_ducat_history';
 
-// --- DOM-Elemente (Unverändert) ---
+// --- DOM-Elemente ---
 const ducatCountElement = document.getElementById('ducatCount');
 const historyListElement = document.getElementById('historyList');
 const historyEmptyMessage = document.getElementById('historyEmpty');
 const searchInput = document.getElementById('partSearchInput');
 const searchResultsContainer = document.getElementById('searchResults');
 
-// --- HILFSFUNKTIONEN (Zeit, Anzeige) (Unverändert) ---
+// --- HILFSFUNKTIONEN (Zeit, Anzeige) ---
 function getCurrentTime() {
     return new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
 }
@@ -109,7 +96,7 @@ function updateDisplay() {
     }
 }
 
-// --- LOCAL STORAGE FUNKTIONEN (Unverändert) ---
+// --- LOCAL STORAGE FUNKTIONEN ---
 function loadState() {
     const savedCount = localStorage.getItem(STORAGE_KEY_COUNT);
     const savedHistory = localStorage.getItem(STORAGE_KEY_HISTORY);
@@ -124,8 +111,7 @@ function saveState() {
     localStorage.setItem(STORAGE_KEY_HISTORY, JSON.stringify(history));
 }
 
-// --- DATENBANK & SUCHE (AKTUALISIERT) ---
-
+// --- DATENBANK & SUCHE ---
 async function loadDatabase() {
     try {
         const response = await fetch('database.json');
@@ -139,24 +125,18 @@ async function loadDatabase() {
     }
 }
 
-/**
- * AKTUALISIERT: Wandelt das JSON um UND übersetzt die Namen.
- */
 function flattenDatabase() {
     searchablePartList = [];
     for (const itemName in primeDatabase) {
         for (const partName in primeDatabase[itemName]) {
             const ducats = primeDatabase[itemName][partName];
-            
-            // HIER PASSIERT DIE ÜBERSETZUNG
             const translatedPartName = translatePartName(partName);
-            
             const displayName = (partName === "") ? itemName : `${itemName} ${translatedPartName}`; 
             const originalName = (partName === "") ? itemName : `${itemName} ${partName}`; 
 
             searchablePartList.push({
-                displayName: displayName,   // Deutsch (z.B. "Volt Prime Blaupause")
-                searchName: originalName,   // Englisch (z.B. "Volt Prime Blueprint")
+                displayName: displayName,   
+                searchName: originalName,   
                 ducats: ducats
             });
         }
@@ -164,48 +144,36 @@ function flattenDatabase() {
     searchablePartList.sort((a, b) => a.displayName.localeCompare(b.displayName));
 }
 
-/**
- * AKTUALISIERT: Sucht jetzt im deutschen UND englischen Namen.
- */
 function handleSearch(event) {
     const query = event.target.value.toLowerCase();
     searchResultsContainer.innerHTML = ''; 
-
     if (query.length < 3) return;
 
     const results = searchablePartList.filter(part => 
-        part.displayName.toLowerCase().includes(query) || // Suche Deutsch
-        part.searchName.toLowerCase().includes(query)    // Suche Englisch
+        part.displayName.toLowerCase().includes(query) || 
+        part.searchName.toLowerCase().includes(query)    
     );
 
     const limitedResults = results.slice(0, 5);
-
     limitedResults.forEach(part => {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'search-result-item';
-        
-        // Zeigt den übersetzten (displayName) an
         itemDiv.innerHTML = `
             <span>${part.displayName}</span>
             <span class="result-ducats">${part.ducats} Đ</span>
         `;
-        // Beim Klick wird der deutsche Name übergeben
         itemDiv.onclick = () => addPartFromSearch(part.displayName, part.ducats);
         searchResultsContainer.appendChild(itemDiv);
     });
 }
 
-/**
- * AKTUALISIERT: Übergibt den deutschen (displayName) an die Historie.
- */
 function addPartFromSearch(displayName, ducats) {
     handleTransaction(ducats, 'Einnahme', displayName);
     searchInput.value = '';
     searchResultsContainer.innerHTML = '';
 }
 
-// --- KERN-FUNKTIONEN (Unverändert) ---
-
+// --- KERN-FUNKTIONEN ---
 function handleTransaction(amount, type, description) {
     if (type === 'Einnahme') ducatCount += amount;
     else if (type === 'Ausgabe') ducatCount -= amount;
@@ -216,8 +184,7 @@ function handleTransaction(amount, type, description) {
         description: description,
         timestamp: getCurrentTime()
     });
-    if (history.length > 50) history.pop();
-
+    if (history.length > 50) history.pop(); // Historie auf 50 begrenzt
     updateDisplay();
     saveState();
 }
@@ -262,11 +229,9 @@ function clearHistory() {
     }
 }
 
-// --- APP START (Unverändert) ---
+// --- APP START ---
 document.addEventListener('DOMContentLoaded', () => {
     loadState();
     loadDatabase(); 
     document.querySelector('.rate-value').textContent = `${DUCAT_PLAT_RATIO}:1`;
 });
-
-
