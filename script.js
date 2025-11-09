@@ -23,7 +23,7 @@ const translationMap = {
     // Waffenteile (Bogen)
     "String": "Sehne",
     "Upper Limb": "Oberteil",
-    "Lower Limb": "Untereteil",
+    "Lower Limb": "Unterteil",
     "Grip": "Griff",
     // Sentinel/Begleiter
     "Carapace": "Panzer",
@@ -39,9 +39,6 @@ const translationMap = {
     "Disc": "Disk"
 };
 
-/**
- * Übersetzt einen einzelnen Teil-Namen.
- */
 function translatePartName(partName) {
     if (translationMap[partName]) {
         return translationMap[partName];
@@ -55,7 +52,7 @@ let history = [];
 let primeDatabase = {};
 let searchablePartList = []; 
 
-const DUCAT_PLAT_RATIO = 5;
+// const DUCAT_PLAT_RATIO = 5; // ENTFERNT
 const STORAGE_KEY_COUNT = 'wf_ducat_count';
 const STORAGE_KEY_HISTORY = 'wf_ducat_history';
 
@@ -234,6 +231,5 @@ function clearHistory() {
 document.addEventListener('DOMContentLoaded', () => {
     loadState();
     loadDatabase(); 
-    document.querySelector('.rate-value').textContent = `${DUCAT_PLAT_RATIO}:1`;
+    // document.querySelector('.rate-value').textContent = `${DUCAT_PLAT_RATIO}:1`; // ENTFERNT
 });
-
